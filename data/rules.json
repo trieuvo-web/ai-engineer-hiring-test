@@ -1,0 +1,114 @@
+[
+  {
+    "id": "rule-001",
+    "name": "VIP Lifetime Discount",
+    "description": "Apply 20% discount for customers with lifetime spend over $10,000",
+    "conditions": ["lifetime_value > 10000", "account_age_days > 365"],
+    "category": "discount"
+  },
+  {
+    "id": "rule-002",
+    "name": "New Customer Welcome",
+    "description": "Apply 10% discount on first purchase for newly registered customers",
+    "conditions": ["order_count == 0", "account_age_days < 30"],
+    "category": "discount"
+  },
+  {
+    "id": "rule-003",
+    "name": "Bulk Order Discount",
+    "description": "Apply 15% discount when order quantity exceeds 50 units",
+    "conditions": ["item_quantity > 50"],
+    "category": "discount"
+  },
+  {
+    "id": "rule-004",
+    "name": "Flash Sale Eligibility",
+    "description": "Customer eligible for flash sale if not used flash sale in last 90 days",
+    "conditions": ["days_since_last_flash_sale > 90", "account_status == active"],
+    "category": "eligibility"
+  },
+  {
+    "id": "rule-005",
+    "name": "Premium Shipping Upgrade",
+    "description": "Automatically upgrade to free express shipping for orders above $200",
+    "conditions": ["order_total > 200", "shipping_method == standard"],
+    "category": "discount"
+  },
+  {
+    "id": "rule-006",
+    "name": "Fraud High Risk Block",
+    "description": "Block transaction if device fingerprint matches known fraud list",
+    "conditions": ["fraud_score > 0.85", "device_fingerprint in blacklist"],
+    "category": "fraud"
+  },
+  {
+    "id": "rule-007",
+    "name": "Velocity Check",
+    "description": "Flag account if more than 5 transactions within 10 minutes",
+    "conditions": ["transaction_count_10min > 5"],
+    "category": "fraud"
+  },
+  {
+    "id": "rule-008",
+    "name": "Geographic Anomaly",
+    "description": "Require additional verification if login location differs from usual by more than 500km",
+    "conditions": ["location_distance_km > 500", "login_frequency == first_time_location"],
+    "category": "fraud"
+  },
+  {
+    "id": "rule-009",
+    "name": "Loyalty Points Multiplier",
+    "description": "Triple loyalty points for purchases in customer birthday month",
+    "conditions": ["current_month == birth_month", "purchase_category != gift_card"],
+    "category": "discount"
+  },
+  {
+    "id": "rule-010",
+    "name": "Subscription Renewal Discount",
+    "description": "Apply 25% discount on subscription renewal if customer tenure exceeds 2 years",
+    "conditions": ["subscription_tenure_days > 730", "renewal_type == annual"],
+    "category": "discount"
+  },
+  {
+    "id": "rule-011",
+    "name": "Abandoned Cart Recovery",
+    "description": "Eligible for 5% recovery coupon if cart abandoned for 24-48 hours",
+    "conditions": ["cart_age_hours >= 24", "cart_age_hours <= 48", "cart_value > 50"],
+    "category": "eligibility"
+  },
+  {
+    "id": "rule-012",
+    "name": "Cross-sell Bundle Eligibility",
+    "description": "Show bundle offer if customer bought from category A but not category B in last 60 days",
+    "conditions": [
+      "purchased_category_a == true",
+      "purchased_category_b == false",
+      "days_since_category_a_purchase < 60"
+    ],
+    "category": "eligibility"
+  },
+  {
+    "id": "rule-013",
+    "name": "Refund Abuse Detection",
+    "description": "Flag account if refund rate exceeds 30% of orders in last 6 months",
+    "conditions": ["refund_rate_6months > 0.30", "total_orders_6months > 3"],
+    "category": "fraud"
+  },
+  {
+    "id": "rule-014",
+    "name": "Employee Purchase Restriction",
+    "description": "Block discount stacking for accounts flagged as employee accounts",
+    "conditions": ["account_type == employee", "discount_count_in_cart > 1"],
+    "category": "eligibility"
+  },
+  {
+    "id": "rule-015",
+    "name": "Seasonal Clearance Eligibility",
+    "description": "Allow access to clearance pricing only for accounts created before current season start",
+    "conditions": [
+      "account_created_before_season_start == true",
+      "clearance_access_used_this_season == false"
+    ],
+    "category": "eligibility"
+  }
+]

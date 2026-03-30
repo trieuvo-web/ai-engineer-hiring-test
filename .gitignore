@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+*.js.map
+prisma/migrations/
+
+# AI conversation logs — candidate fills this in
+ai-conversation-log/
+!ai-conversation-log/.gitkeep

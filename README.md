@@ -4,7 +4,7 @@ Welcome. This is a take-home assessment for the **AI Engineer** role.
 
 **Time allowed:** 2 days
 **Tools allowed:** Any AI coding assistant (Claude, Cursor, Copilot, etc.)
-**Required:** Submit your AI conversation log — see Part 3.
+**Required:** Submit screenshots of your AI conversation — see Part 3.
 
 ---
 
@@ -32,7 +32,9 @@ submission/
 ├── scripts/
 │   └── seed-qdrant.ts           ← seed script for Part 2
 └── ai-conversation-log/
-    └── session.md               ← Part 3: raw AI conversation export
+    ├── screenshot-01.png        ← Part 3: screenshots of AI conversation
+    ├── screenshot-02.png
+    └── ...                      ← at least 5 screenshots
 ```
 
 Submit as a **private GitHub repo** and invite `trieuvo-web` as a collaborator.
@@ -101,42 +103,55 @@ Seed data: 15 rules are provided in [`data/rules.json`](./data/rules.json).
 
 ---
 
-## Part 3 — AI Collaboration Log (30 points)
+## Part 3 — AI Collaboration Screenshots (30 points)
 
-Export and submit your full conversation with your AI assistant (Claude, Cursor, ChatGPT, etc.).
+Submit **screenshots** of your AI conversation. We want to see the real, unedited interaction — what you asked, what the AI answered, and the moments where you pushed back or corrected it.
 
-If you used multiple tools, submit the log from your primary session.
+**Minimum: 5 screenshots.** More is better. Name them sequentially: `screenshot-01.png`, `screenshot-02.png`, etc.
 
-**Do not clean up or edit the log.** We want to see the real process.
+**Do not crop, edit, or stage screenshots.** We're looking for authentic evidence of your process.
 
-In your submission `README.md`, add a short section (100–200 words):
+### What to capture
 
-> *"How I used AI in this test — what I delegated to AI, what I did myself, and the moment(s) I chose not to trust the AI's output."*
+Your screenshots must include at least one example of each:
 
-### How to export your conversation log
+1. **A prompt you wrote** — show how you framed a problem for the AI
+2. **An AI response you accepted** — with the code or suggestion it gave
+3. **A moment you corrected or rejected the AI** — where you caught an error, questioned an assumption, or chose a different approach
+4. **Your working environment** — the editor/IDE with AI sidebar visible (Cursor, VS Code Copilot, Claude Code terminal, etc.)
+5. **A test run or code execution** — evidence that you ran and verified the code
 
-Place your export in `ai-conversation-log/session.md` (or `.json`, `.txt` — any format is fine).
+### How to take screenshots
 
-**Claude (claude.ai / Claude.app)**
-- Open the conversation → click the `···` menu (top right) → **"Export conversation"** → saves as Markdown
-- Or: select all text in the chat, copy, paste into `session.md`
-- Claude Code (CLI): your conversation is in `~/.claude/projects/<project>/` as JSONL files
+**macOS:** `Cmd + Shift + 4` → drag to select area → saves to Desktop
+**Windows:** `Win + Shift + S` → select area → paste into image editor and save
+**Linux:** `PrtSc` or `gnome-screenshot -a`
+
+For full-screen: `Cmd + Shift + 3` (macOS) or `PrtSc` (Windows/Linux)
+
+### Per-tool tips
+
+**Claude (claude.ai / Claude.app / Claude Code)**
+- Scroll through the conversation and take screenshots of key exchanges
+- For Claude Code (CLI): take a terminal screenshot showing the prompt and response
 
 **Cursor**
-- Cursor does not have a built-in export. Copy the full chat panel content and paste into `session.md`.
-- Alternatively: open Cursor's chat history panel → right-click the session → **"Copy all"**
+- Screenshot the AI chat panel alongside the code it generated in the editor
 
-**ChatGPT / ChatGPT app**
-- Web: click the share icon on a conversation → **"Share link"** (then copy the public URL into your log), or manually copy-paste the conversation
-- API / OpenAI Playground: copy the messages JSON from the playground
+**ChatGPT**
+- Screenshot the browser window with the full message thread visible
 
 **GitHub Copilot Chat (VS Code)**
-- In the Chat panel, right-click any message → **"Copy All"**, then paste into `session.md`
+- Screenshot the Chat panel + the file it modified side by side
 
-**Aider / open-source CLI agents**
-- Most CLI agents write a session log to `aider.chat.history.md` or similar in the working directory — include that file directly
+**Aider / CLI agents**
+- Screenshot the terminal showing the conversation and diffs
 
-> **Tip:** A screenshot of your conversation is also acceptable if export is not available. Save as `ai-conversation-log/screenshot-1.png`, etc.
+### In your submission README
+
+Add a short section (100–200 words):
+
+> *"How I used AI in this test — what I delegated to AI, what I did myself, and the moment(s) I chose not to trust the AI's output."*
 
 ---
 

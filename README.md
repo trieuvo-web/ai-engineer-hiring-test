@@ -113,6 +113,31 @@ In your submission `README.md`, add a short section (100–200 words):
 
 > *"How I used AI in this test — what I delegated to AI, what I did myself, and the moment(s) I chose not to trust the AI's output."*
 
+### How to export your conversation log
+
+Place your export in `ai-conversation-log/session.md` (or `.json`, `.txt` — any format is fine).
+
+**Claude (claude.ai / Claude.app)**
+- Open the conversation → click the `···` menu (top right) → **"Export conversation"** → saves as Markdown
+- Or: select all text in the chat, copy, paste into `session.md`
+- Claude Code (CLI): your conversation is in `~/.claude/projects/<project>/` as JSONL files
+
+**Cursor**
+- Cursor does not have a built-in export. Copy the full chat panel content and paste into `session.md`.
+- Alternatively: open Cursor's chat history panel → right-click the session → **"Copy all"**
+
+**ChatGPT / ChatGPT app**
+- Web: click the share icon on a conversation → **"Share link"** (then copy the public URL into your log), or manually copy-paste the conversation
+- API / OpenAI Playground: copy the messages JSON from the playground
+
+**GitHub Copilot Chat (VS Code)**
+- In the Chat panel, right-click any message → **"Copy All"**, then paste into `session.md`
+
+**Aider / open-source CLI agents**
+- Most CLI agents write a session log to `aider.chat.history.md` or similar in the working directory — include that file directly
+
+> **Tip:** A screenshot of your conversation is also acceptable if export is not available. Save as `ai-conversation-log/screenshot-1.png`, etc.
+
 ---
 
 ## Part 4 — Oral Defense (30 minutes, scheduled after submission)

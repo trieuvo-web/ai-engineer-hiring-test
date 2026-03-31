@@ -2,7 +2,7 @@
 
 Welcome. This is a take-home assessment for the **AI Engineer** role.
 
-**Time allowed:** 2 days
+**Time allowed:** 1 days
 **Tools allowed:** Any AI coding assistant (Claude, Cursor, Copilot, etc.)
 **Required:** Submit screenshots of your AI conversation — see Part 3.
 
